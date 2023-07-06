@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import "../build/App.css";
+import React, { useState, useEffect, useRef } from "react";
+import "./App.css";
 
 const symbols = ["🐶", "🐱", "🐭", "🦊", "🐼", "🐯", "🐵"];
 
@@ -56,15 +56,15 @@ function App() {
 
   const handleCardClick = (index) => {
     const flippedCardIndex = flippedCards[0];
-
+  
     // Ignore click if the card is already flipped or matched
     if (cards[index].isFlipped || cards[index].isMatched) {
       return;
     }
-
+  
     if (flippedCards.length === 1) {
       const flippedCard = cards[flippedCardIndex];
-
+  
       if (flippedCard.symbol === cards[index].symbol) {
         const updatedCards = [...cards];
         updatedCards[index].isFlipped = true;
@@ -75,14 +75,14 @@ function App() {
       } else {
         const updatedCards = [...cards];
         updatedCards[index].isFlipped = true;
-
+  
         setTimeout(() => {
           updatedCards[index].isFlipped = false;
           updatedCards[flippedCardIndex].isFlipped = false;
           setCards(updatedCards);
         }, 1000);
       }
-
+  
       setFlippedCards([]);
     } else {
       const updatedCards = [...cards];
