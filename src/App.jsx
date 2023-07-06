@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "./App.css";
+import "../build/App.css";
 
 const symbols = ["🐶", "🐱", "🐭", "🦊", "🐼", "🐯", "🐵"];
 
